@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:clickable="true"
+    tools:context="mis.oblabs.com.takeorder.fragment.ItemFragment">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Item"
+        android:padding="16dp"
+        android:id="@+id/etSearch"
+        android:background="@drawable/rectangle"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:id="@+id/recycle_item">
+
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FILTER"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:id="@+id/tvFilter"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:id="@+id/tvAdd"/>
+    </LinearLayout>
+</LinearLayout>

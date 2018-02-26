@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mis.oblabs.com.takeorder.activity.OrderActivity">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bttnCheckout"
+        android:layout_marginBottom="38dp"
+        android:id="@+id/recycle_orders"></android.support.v7.widget.RecyclerView>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Checkout"
+    android:id="@+id/bttnCheckout"
+    android:background="@color/colorPrimaryDark"
+    android:textColor="#fff"
+
+    android:layout_alignParentBottom="true"/>
+<android.support.design.widget.FloatingActionButton
+    android:layout_width="72dp"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    app:srcCompat="@drawable/add"
+    android:id="@+id/bttnAdd"
+    android:tint="@color/colorPrimaryDark"
+    app:backgroundTint="#fff"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame">
+
+    </FrameLayout>
+</RelativeLayout>

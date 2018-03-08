@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="#fff"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTitle"
+        android:text="Add Comment"
+        android:padding="12dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etComment"
+        android:hint="Enter Comment eg. Without Onion"
+        android:background="@drawable/rectangle"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:lines="5"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@color/colorPrimary"
+        android:text="Submit"
+        android:id="@+id/btnYes"
+        android:textColor="#fff"
+        />
+
+</LinearLayout>

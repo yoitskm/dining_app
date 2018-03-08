@@ -1,5 +1,7 @@
 package mis.oblabs.com.takeorder.adapter;
 
+import android.content.Context;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import mis.oblabs.com.takeorder.R;
+import mis.oblabs.com.takeorder.fragment.CommentFragment;
 import mis.oblabs.com.takeorder.pojo.OrderData;
 import mis.oblabs.com.takeorder.pojo.TableData;
 
@@ -18,25 +21,30 @@ import mis.oblabs.com.takeorder.pojo.TableData;
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Holder> {
     List<OrderData> list;
+    Context context;
+
+    FragmentManager fragmentManager;
 
     public List<OrderData> getList() {
         return list;
     }
 
 
-    public void addItemInList(OrderData data){
+    public void addItemInList(OrderData data  ){
 
         list.add(data);
         notifyDataSetChanged();
 
     }
 
-    public OrderItemAdapter(List<OrderData> list) {
+    public OrderItemAdapter(List<OrderData> list ,FragmentManager fragmentManager) {
         this.list = list;
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+        context = parent.getContext();
         return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.order_card, parent, false));
     }
 
@@ -59,7 +67,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Hold
             public void onClick(View view) {
                 data.setCount(data.getCount()+1);
                 holder.tvCount.setText(String.valueOf(data.getCount()));
-                holder.tvQuantity.setText(String.valueOf(data.getCount()));
+                holder.tvQuantity.setText("x"+String.valueOf(data.getCount()));
                 holder.tvTotal.setText("Rs. "+String.valueOf(data.getCount()*data.getPrice()));
             }
         });
@@ -92,6 +100,22 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Hold
             }
         });
 
+        holder.tvComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                CommentFragment fragment = CommentFragment.createInstance(new CommentFragment.StateCallback() {
+                    @Override
+                    public void stateChanged(String comment) {
+                            holder.tvComment.setText(comment);
+                            data.setComment(comment);
+                    }
+                } , data.getComment());
+
+                fragment.show(fragmentManager , "comment");
+            }
+        });
+
 
 
     }
@@ -105,7 +129,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Hold
 
 
 
-        TextView tvSn , tvTitle , tvPlus , tvMinus , tvCount , tvCancel , tvAmount , tvTotal  ,tvQuantity;
+        TextView tvSn , tvTitle , tvPlus , tvMinus , tvCount , tvCancel , tvAmount , tvTotal  ,tvQuantity , tvComment;
 
 
         public Holder(View itemView) {
@@ -121,6 +145,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Hold
             tvAmount = itemView.findViewById(R.id.tvAmount);
             tvTotal = itemView.findViewById(R.id.tvTotal);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
+            tvComment = itemView.findViewById(R.id.tvComment);
 
 
 

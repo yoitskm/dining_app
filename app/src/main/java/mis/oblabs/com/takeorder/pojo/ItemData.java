@@ -6,7 +6,31 @@ package mis.oblabs.com.takeorder.pojo;
 
 public class ItemData {
 
-    String title, subTitle , url,keyword;
+    String title;
+    String subTitle;
+    String url;
+    String keyword;
+
+    public ItemData(String title, String subTitle, String url, String keyword, String id, int count, int price) {
+        this.title = title;
+        this.subTitle = subTitle;
+        this.url = url;
+        this.keyword = keyword;
+        this.id = id;
+        this.count = count;
+        this.price = price;
+    }
+
+    public String getId() {
+
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id;
     int count,price;
 
     public String getTitle() {

@@ -12,6 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/table"
+
         android:layout_centerVertical="true"
         android:id="@+id/imgItem"
         android:background="#006745"
@@ -31,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvItemSubTitle"
-        android:text="Potato Sliced, Garnished with baisils and beacon and salt over them."
+        android:text=""
         android:paddingLeft="12dp"
         android:layout_below="@+id/tvItemTitle"
         android:textSize="16dp"
@@ -52,21 +53,21 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="8dp"
-        android:text="Veg"
+        android:text=""
         android:id="@+id/tvOne"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="8dp"
-        android:text="260 Orders"
+        android:text=""
         android:id="@+id/tvTwo"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/tvPrice"
-        android:text="Rs. 120"
+        android:text=""
         android:textStyle="bold"
         android:padding="8dp"
         android:textColor="#000"

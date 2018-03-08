@@ -16,16 +16,16 @@ public class Constants {
     public static List<OrderData> getOrders(){
 
         List<OrderData> orders = new ArrayList<>();
-        orders.add(new OrderData("French Fries" , 40,1,40));
-        orders.add(new OrderData("Mexican Burger" , 120,1,40));
-        orders.add(new OrderData("Hakka Noodles" , 90,1,40));
-        orders.add(new OrderData("Garlic Bread" , 80,1,40));
-        orders.add(new OrderData("Paneer Tikka" , 220,1,40));
-        orders.add(new OrderData("Dal Makhani" , 275,1,40));
-        orders.add(new OrderData("Paneer Butter Masala" , 275,1,40));
-        orders.add(new OrderData("Veg Raita" , 180,1,40));
-        orders.add(new OrderData("Stuffed Naan" , 100,1,40));
-        orders.add(new OrderData("Vanilla Icecream" , 120,1,40));
+//        orders.add(new OrderData("1","French Fries" , 40,1,40));
+//        orders.add(new OrderData("Mexican Burger" , 120,1,40));
+//        orders.add(new OrderData("Hakka Noodles" , 90,1,40));
+//        orders.add(new OrderData("Garlic Bread" , 80,1,40));
+//        orders.add(new OrderData("Paneer Tikka" , 220,1,40));
+//        orders.add(new OrderData("Dal Makhani" , 275,1,40));
+//        orders.add(new OrderData("Paneer Butter Masala" , 275,1,40));
+//        orders.add(new OrderData("Veg Raita" , 180,1,40));
+//        orders.add(new OrderData("Stuffed Naan" , 100,1,40));
+//        orders.add(new OrderData("Vanilla Icecream" , 120,1,40));
         return orders;
     }
 

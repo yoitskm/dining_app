@@ -14,6 +14,7 @@ import java.util.List;
 import mis.oblabs.com.takeorder.R;
 import mis.oblabs.com.takeorder.fragment.ItemFragment;
 import mis.oblabs.com.takeorder.pojo.ItemData;
+import mis.oblabs.com.takeorder.pojo.ObjItem;
 import mis.oblabs.com.takeorder.pojo.OrderData;
 
 /**
@@ -21,12 +22,20 @@ import mis.oblabs.com.takeorder.pojo.OrderData;
  */
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Holder> {
-    List<ItemData> list;
+    List<ObjItem> list;
 
     ItemFragment.ItemCallback callback;
     ItemFragment.StateCallback dismissCallback;
 
-    public ItemAdapter(List<ItemData> list , ItemFragment.ItemCallback callback) {
+    public List<ObjItem> getList() {
+        return list;
+    }
+
+    public void setList(List<ObjItem> list) {
+        this.list = list;
+    }
+
+    public ItemAdapter(List<ObjItem> list , ItemFragment.ItemCallback callback) {
         this.list = list;
         this.callback = callback;
     }
@@ -44,8 +53,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Holder> {
             @Override
             public void onClick(View view) {
 
-                ItemData data = list.get((Integer) view.getTag());
-                callback.itemSelected(new OrderData(data.getTitle() , data.getPrice() , 1,1));
+                ObjItem data = list.get((Integer) view.getTag());
+                callback.itemSelected(new OrderData(data.getId(),data.getTitle() ,Integer.parseInt(data.getPrice()),1 , 1 ));
 
                 dismissCallback.stateChanged();
 
@@ -57,15 +66,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Holder> {
     public void onBindViewHolder(final Holder holder, final int position) {
 
 
-        final ItemData data= list.get(position);
+        final ObjItem data= list.get(position);
 
         holder.itemView.setTag(position);
 
 
         holder.tvTitle.setText(data.getTitle());
-        holder.tvSubTitle.setText(data.getSubTitle());
-        holder.tvKeyword.setText(data.getKeyword());
-        holder.tvCount.setText(String.valueOf(data.getCount())+" Orders");
+        holder.tvSubTitle.setText(data.getCategory());
+        holder.tvKeyword.setText(data.getUnit());
+//        holder.tvCount.setText(String.valueOf(data.getCount())+" Orders");
         holder.tvPrice.setText("Rs. "+String.valueOf(data.getPrice()));
 
 

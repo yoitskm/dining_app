@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/table"
+        android:src="@mipmap/table"
         android:id="@+id/imgTable"
         android:layout_gravity="center"
         android:padding="16dp"/>

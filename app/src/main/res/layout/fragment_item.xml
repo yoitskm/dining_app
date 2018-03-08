@@ -1,3 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:clickable="true"
+    tools:context="mis.oblabs.com.takeorder.fragment.ItemFragment">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,11 +14,20 @@
     android:background="#fff"
     android:clickable="true"
     tools:context="mis.oblabs.com.takeorder.fragment.ItemFragment">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTitle"
+        android:text="Select Group"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:padding="16dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Search Item"
         android:padding="16dp"
+        android:visibility="gone"
         android:id="@+id/etSearch"
         android:background="@drawable/rectangle"
         />
@@ -24,13 +41,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="FILTER"
             android:gravity="center"
             android:padding="16dp"
+            android:visibility="gone"
             android:layout_weight="1"
             android:id="@+id/tvFilter"/>
         <TextView
@@ -38,8 +57,18 @@
             android:layout_height="wrap_content"
             android:text="ADD"
             android:gravity="center"
-            android:padding="16dp"
+            android:padding="8dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="24dp"
             android:layout_weight="1"
             android:id="@+id/tvAdd"/>
     </LinearLayout>
 </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

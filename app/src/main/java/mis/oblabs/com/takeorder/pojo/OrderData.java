@@ -6,8 +6,13 @@ package mis.oblabs.com.takeorder.pojo;
 
 public class OrderData {
 
+    String id;
 
     String itemName;
+
+
+    String comment;
+
 
     int count , total,price;
 
@@ -43,11 +48,19 @@ public class OrderData {
         this.price = price;
     }
 
-    public OrderData(String itemName, int price, int count, int total) {
-
+    public OrderData(String id, String itemName, int price, int total, int count) {
+        this.id = id;
         this.itemName = itemName;
         this.count = count;
         this.total = total;
         this.price = price;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

@@ -36,4 +36,14 @@
         android:id="@+id/frame">
 
     </FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvBlank"
+        android:text="Your Order is Empty \nclick + to add items"
+        android:textAllCaps="true"
+        android:layout_centerInParent="true"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimary"
+        />
 </RelativeLayout>
